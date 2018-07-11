@@ -1,0 +1,133 @@
+<html>
+	<head>
+		<title>Larimer.org Styles</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="all" />
+		<link rel="stylesheet" href="larimer.css">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<!-- //github.com/larimercounty/larimercounty.github.io/blob/master/ -->
+		<script>
+		!function(o){o(function(){o(document).tooltip({selector:'[data-toggle="tooltip"]'}),o(document).popover({selector:'[data-toggle="popover"]'}),o("#myModal").modal(),o().alert("close"),o(".collapse").collapse(),o(".dropdown-toggle").dropdown()})}(jQuery);
+			$(window).scroll(function() {
+				var scroll_distance = $(document).scrollTop();
+				if (scroll_distance > 10) {
+					$('.st-nav, .iwantto, .nav-container').addClass('fixed');
+				}
+				else {
+					$('.st-nav, .iwantto, .nav-container').removeClass('fixed');
+				}
+			});
+			$(document).ready(function() {
+				$('[data-tooltip="true"]').tooltip();
+				$('[data-tooltip="false"]').tooltip('hide');
+				$(".video-embed").fitVids();
+				$('.totop').click(function(){
+					$('html, body').animate({scrollTop : 0},800);
+					return false;
+				});	
+			});	
+			$(".dropdown").click(
+				function(event) {
+				//Toggle the visiblity of fulldrop class
+				$(".fulldrop").toggle();
+				return true;
+				});	
+		</script>
+	</head>
+	<body>
+	<nav class="st-nav navbar navbar-default">
+		<div class="container nav-container">
+			<div class="navbar-header collapse">
+				<div class="icon-links-mobile">
+				</div>			
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-tooltip="true" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" data-placement="bottom" title="" data-original-title="Toggle navigation">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span> 
+				</button>
+				<div class="st-logo-mobile"><a href="https://www.larimer.org" class="externalLink"><img src="https://apps.larimer.org/images/logos/lc-white-nt.png" alt="Home"></a></div>
+			</div>
+			<div class="navbar-collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 0px;">
+				<a href="https://larimer.org/" class="st-logo" data-toggle="tooltip" data-placement="bottom" title="Home" data-original-title="Home"><img alt="Larimer County" src="https://apps.larimer.org/images/logos/lc-white-nt.png"></a>
+				
+				<ul class="nav navbar-nav st-nav-links2">
+					<li><a href="https://apps.larimer.org"><i class="fa fa-home" aria-hidden="true"></i><span class="link-label"> Apps Home</span></a> 
+					</li>
+				</ul>
+			</div>		
+		</div>		
+	</nav>
+	<!-- END HEADER -->
+	
+	<div id="main" class="container main-content"><a name="begincontent" id="begincontent">&nbsp;</a>
+
+		<h1>Typography</h1>
+		<h1>H1</h1>
+		<h2>H2</h2>
+		<h3>H3</h3>
+		<h4>H4</h4>
+		<h5>H5</h5>
+	
+	</div>
+	
+	<!-- START FOOTER -->
+	<div class="st-foot hidden-print">
+		<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-sm-6">	
+				<h3>Larimer County, Colorado</h3>
+
+			<p>
+				200 W. Oak Street<br>
+				Fort Collins, CO 80521<br>
+				<a class="under" href="https://larimer.org/facilities/county-facilities" target="_top" title="Map of facilities">Map of Facilities</a></p>
+				<div class="foot-spacer">
+					(970) 498-7000<br>
+					<a class="under" href="https://larimer.org/contact" target="_top" title="Phone/Email directory">Contact Us</a><br>
+					<a class="under" href="https://larimer.org/guiding-principles" title="View Larimer County's Guiding Principles">Our Guiding Principles</a>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6"> 
+				<h3>Other County Sites</h3>
+				<ul class="footer-links-1" aria-label="Other County Sites" role="navigation">
+					<li><a href="http://budweisereventscenter.com" class="externalLink">Budweiser Events Center</a></li>
+					<li><a href="https://www.larimercamping.com" class="externalLink">Camping Reservations</a></li>
+					<li><a href="http://larimer.extension.colostate.edu" class="externalLink">Larimer County Extension</a></li>
+					<li><a href="http://larimercountyfair.org/" class="externalLink">Larimer County Fair and Rodeo</a></li>
+					<li><a href="http://treventscomplex.com/" class="externalLink">The Ranch</a></li>
+					<li><a href="http://larimerworkforce.org" class="externalLink">Workforce Center</a></li>
+				</ul><br>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<h3>City &amp; Town Sites</h3>
+				<ul class="footer-links-2" aria-label="City &amp; Town Sites" role="navigation">
+					<li><a href="http://www.berthoud.org/" class="externalLink">Berthoud</a></li>
+					<li><a href="https://www.colorado.gov/townofestespark" class="externalLink">Estes Park</a></li>
+					<li><a href="https://www.fcgov.com/" class="externalLink">Fort Collins</a></li>
+					<li><a href="http://www.townofjohnstown.com/" class="externalLink">Johnstown</a></li>
+					<li><a href="http://www.ci.loveland.co.us/" class="externalLink">Loveland</a></li>
+					<li><a href="http://timnath.org" class="externalLink">Timnath</a></li>
+					<li><a href="http://www.townofwellington.com/" class="externalLink">Wellington</a></li>
+					<li><a href="http://www.windsorgov.com/" class="externalLink">Windsor</a></li>	
+				</ul>
+			</div>		
+			<div class="col-md-3 col-sm-6">
+				<h3><a href="https://larimer.org/public-affairs/connect-larimer-county" aria-label="Connect with Larimer County">Connect with Us</a></h3>
+				<a href="http://facebook.com/larimercounty/" class="si2 externalLink" data-toggle="tooltip" data-placement="top" title="Larimer County on Facebook"><i class="fa fw fa-facebook" aria-hidden="true"></i><span>Larimer County on Facebook</span></a> 
+				<a href="http://twitter.com/LarimerCounty" class="si2 externalLink" data-toggle="tooltip" data-placement="top" title="Larimer County on Twitter"><i class="fa fw fa-twitter" aria-hidden="true"></i><span>Larimer County on Twitter</span></a>
+				<a href="http://youtube.com/user/larimercounty/" class="si2 externalLink" data-toggle="tooltip" data-placement="top" title="Larimer County on YouTube"><i class="fa fw fa-youtube-play" aria-hidden="true"></i><span>Larimer County on YouTube</span></a>
+				<a href="https://apps.larimer.org/subscriptions.cfm" class="si2" data-toggle="tooltip" data-placement="top" title="Email subscriptions"><i class="fa fw fa-rss" aria-hidden="true"></i><span>Email subscription</span></a>
+				<br>
+				<a href="https://larimer.org/bocc/transparency">Transparency</a><br>
+				<a href="https://larimer.org/bocc/legal" title="Legal information and site practices">Legal Disclaimers</a>
+			
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	</body>
+</html>
