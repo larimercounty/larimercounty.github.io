@@ -112,9 +112,6 @@ ul.nav.nav-pills > li.active > a:link, ul.nav.nav-pills > li.active > a,  ul.nav
 .btn-primary.disabled,  .btn-primary[disabled] { background-color: #993333; }
 .btn-default:active, .btn-default.active, .btn-default.active:active, .open > .btn-default.dropdown-toggle { color: #333 !important; }
 
-.well {
-    box-shadow: none;
-}
 
 .nav-photo a, .nav-photo2 a, .nav-icon a, .nav-btn a, .nav-btn-desc a, .iwant a { text-decoration: none !important; }
 .main-content a:hover, .nav-photo a:hover, .nav-photo2 a:hover, .nav-icon a:hover, .nav-btn a:hover, .iwant a:hover { text-decoration: underline; }
@@ -371,7 +368,18 @@ h5, .h5 {
   font-weight: bold; }
 p {
   margin: 0 0 11px; }
+.well {
+    box-shadow: none;
+}
 
+.jumbotron h2 {
+    margin-top: 0px;
+}
+.jumbotron {
+    padding-top: 36px;
+    padding-bottom: 24px;
+} 
+  
 /* COLOR CLASSES */
 .brown { color: #585453 !important; }
 .blue { color: #005569 !important; }
@@ -427,7 +435,6 @@ h1.blue:before, h2.blue:before, h3.blue:before { border-color: #005569; color: #
 h1.red:before, h2.red:before, h3.red:before { border-color: #9f481b; color: #9f481b !important; }
 h1.green:before, h2.green:before, h3.green:before { border-color: #00584C; color: #00584C !important; }
 h1.gray:before, h2.gray:before, h3.gray:before { border-color: #585453; color: #585453 !important; }
-
 
 
 @media print {
@@ -667,17 +674,6 @@ h1.gray:before, h2.gray:before, h3.gray:before { border-color: #585453; color: #
 @media only screen and (min-height: 800px) {
 	.main-content { min-height: 600px; }
 }
-
-.jumbotron h2 {
-    margin-top: 0px;
-}
-.jumbotron {
-    padding-top: 36px;
-    padding-bottom: 24px;
-}
-
-
-
 @media screen and (min-width: 776px) and (max-width: 991px) {
 	.hidden-md {
 		display: none;
