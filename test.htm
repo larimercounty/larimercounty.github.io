@@ -13,10 +13,10 @@
 			$(window).scroll(function() {
 				var scroll_distance = $(document).scrollTop();
 				if (scroll_distance > 10) {
-					$('.st-nav, .iwantto, .nav-container').addClass('fixed');
+			//		$('.st-nav, .iwantto, .nav-container').addClass('fixed');
 				}
 				else {
-					$('.st-nav, .iwantto, .nav-container').removeClass('fixed');
+			//		$('.st-nav, .iwantto, .nav-container').removeClass('fixed');
 				}
 			});
 			$(document).ready(function() {
@@ -72,6 +72,53 @@
 			<h5>H5 heading</h5>
 			<blockquote>Blockquote</blockquote>
 			<p><a href="#">Link</a></p>
+		<h4>Color Classes</h4>
+		<div class="row">
+			<div class="col-sm-2">
+				<div class="color-box bg-green">
+				bg-green<br>#00584C
+				</div>
+				
+			</div>
+			<div class="col-sm-2">
+				<div class="color-box bg-blue">bg-blue<br>#005569
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="color-box bg-red">bg-red<br>#9f481b
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="color-box bg-tan">bg-tan<br>#7a673c
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="color-box bg-gray">bg-gray<br>#585453
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2">
+				<div class="color-box bg-lt-green">bg-lt-green<br>#E1EBEA
+				</div>			
+			</div>
+			<div class="col-sm-2">
+				<div class="color-box bg-lt-blue">bg-lt-blue<br>#E0EAEC
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="color-box bg-lt-red">bg-lt-red<br>#F4E9E3
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="color-box bg-lt-tan">bg-lt-tan<br>#F0E7D6
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="color-box bg-lt-gray">bg-lt-gray<br>#EFEEEE
+				</div>
+			</div>
+		</div>
 		<h4>Buttons</h4>
 		<p>Sizes: 
 			<a href="#" class="btn btn-lg">class=btn btn-lg</a>
@@ -130,6 +177,352 @@
 			<a class="nav-link disabled" href="#">Disabled</a>
 		  </li>
 		</ul>
+		
+		
+		
+		
+		<p class="demo-label"><span>1</span> Department or Page Banner<a id="1" name="1"></a></p>
+
+		<p>
+			<strong>Users can create a Department Banner to apply on multiple pages, or add a Page Banner on a specific page.</strong></p>
+
+		<p>
+			Green - Success</p>
+
+		<div class="alert-page">
+			<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-clock-o">&nbsp;</i> <span class="div"><span class="h3">Avoid the Line</span> Click here to make an appointment online - <strong>bookatime</strong> with vehicle licensing!</span> </a></div>
+
+		<p>
+			Tan</p>
+
+		<div class="alert-page tan">
+			<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-clock-o">&nbsp;</i> <span class="div"><span class="h3">Avoid the Line</span> Click here to make an appointment online - <strong>bookatime</strong> with vehicle licensing!</span> </a></div>
+
+		<p>
+			Blue</p>
+
+		<div class="alert-page blue">
+			<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-clock-o">&nbsp;</i> <span class="div"><span class="h3">Avoid the Line</span> Click here to make an appointment online - <strong>bookatime</strong> with vehicle licensing!</span> </a></div>
+
+		<p>
+			Sienna - Warning</p>
+
+		<div class="alert-page sienna">
+			<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-clock-o">&nbsp;</i> <span class="div"><span class="h3">Avoid the Line</span> Click here to make an appointment online - <strong>bookatime</strong> with vehicle licensing!</span> </a></div>
+
+		<p>
+			Gray</p>
+
+		<div class="alert-page gray">
+			<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-clock-o">&nbsp;</i> <span class="div"><span class="h3">Avoid the Line</span> Click here to make an appointment online - <strong>bookatime</strong> with vehicle licensing!</span> </a></div>
+
+		<div class="clearfix">
+			&nbsp;</div>
+
+		<div class="clearfix">
+			&nbsp;</div>
+
+		<p class="demo-label">
+			<span>2</span> Button Nav with Tooltip (2, 3 or 4 column)<a id="2" name="2"></a></p>
+
+		<p>
+			The first two links demonstrate displaying extra text in the form of a tooltip and popover.</p>
+
+		<div class="nav-btn row">
+			<div class="col-md-3 col-sm-6">
+				<a data-placement="top" data-toggle="tooltip" href="#" title="Some descriptive text"><i aria-hidden="true" class="fa big-icon fa-fw fa-certificate">&nbsp;</i> Adult Protective Services</a></div>
+
+			<div class="col-md-3 col-sm-6">
+				<a data-content="More descriptive text to describe the description of the link in a non-redundant way." data-placement="top" data-toggle="popover" data-trigger="hover" href="#" title="" data-original-title="Fraud Investigation and Recovery"><i aria-hidden="true" class="fa big-icon fa-fw fa-search">&nbsp;</i> Fraud Investigation and Recovery - a really long title right here</a></div>
+
+			<div class="col-md-3 col-sm-6">
+				<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-universal-access">&nbsp;</i> Office on Aging</a></div>
+
+			<div class="col-md-3 col-sm-6">
+				<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-heartbeat">&nbsp;</i> Options for Long Term Care</a></div>
+
+			<div class="col-md-3 col-sm-6">
+				<a data-placement="top" data-toggle="tooltip" href="#" title="Some descriptive text"><i aria-hidden="true" class="fa big-icon fa-fw fa-certificate">&nbsp;</i> Adult Protective Services</a></div>
+
+			<div class="col-md-3 col-sm-6">
+				<a data-content="More descriptive text to describe the description of the link in a non-redundant way." data-placement="top" data-toggle="popover" data-trigger="hover" href="#" title="" data-original-title="Fraud Investigation and Recovery"><i aria-hidden="true" class="fa big-icon fa-fw fa-search">&nbsp;</i> Fraud Investigation and Recovery</a></div>
+
+			<div class="col-md-3 col-sm-6">
+				<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-universal-access">&nbsp;</i> Office on Aging</a></div>
+
+			<div class="col-md-3 col-sm-6">
+				<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-heartbeat">&nbsp;</i> Options for Long Term Care</a></div>
+		</div>
+
+		<p>
+			&nbsp;</p>
+
+		<p class="demo-label">
+			<span>2b</span> Button Nav with Description (2, 3 or 4 column)<a id="2b" name="2b"></a></p>
+
+		<p>
+			The first two links demonstrate displaying extra text in the form of a tooltip and popover.</p>
+
+		<div class="nav-btn-desc row">
+			<div class="col-md-3 col-sm-6">
+				<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-certificate">&nbsp;</i> Adult Protective Services <span>Some descriptive text</span></a></div>
+
+			<div class="col-md-3 col-sm-6">
+				<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-search">&nbsp;</i> Fraud Investigation and Recovery <span>More descriptive text to describe the link in a clever, non-redundant sort of way.</span></a></div>
+
+			<div class="col-md-3 col-sm-6">
+				<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-universal-access">&nbsp;</i> Office on Aging</a></div>
+
+			<div class="col-md-3 col-sm-6">
+				<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-heartbeat">&nbsp;</i> Options for Long Term Care</a></div>
+		</div>
+
+		<p>
+			&nbsp;</p>
+
+		<p class="demo-label">
+			<span>3</span> Icon Nav (2 column)<a id="3" name="3"></a></p>
+
+		<div class="nav-icon row">
+			<div class="col-sm-6">
+				<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-cog">&nbsp;</i> <span>Programs/Services</span></a></div>
+
+			<div class="col-sm-6">
+				<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-handshake-o">&nbsp;</i> <span>Funded Partners</span></a></div>
+
+			<div class="col-sm-6">
+			<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-file-text-o ">&nbsp;</i> <span>Publications/Reports</span></a></div>
+
+			<div class="col-sm-6">
+			<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-graduation-cap">&nbsp;</i> <span>Classes/Training</span></a></div>
+
+			<div class="col-sm-6">
+			<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-users">&nbsp;</i> <span>Advisory Council</span></a></div>
+
+			<div class="col-sm-6">
+			<a href="#"><i aria-hidden="true" class="fa big-icon fa-fw fa-address-book-o">&nbsp;</i> <span>Contact LCOA</span></a></div>
+		</div>
+
+		<p>
+			&nbsp;</p>
+
+		<p class="demo-label">
+			<span>4</span> Image Nav<a id="4" name="4"></a></p>
+
+		<div class="row nav-photo">
+			<div class="col-sm-4">
+				<a href="#"><img alt="Orientation" src="https://apps.larimer.org/_img/orientation.jpg"> Orientation </a></div>
+
+			<div class="col-sm-4">
+				<a href="#"><img alt="Foster Parenting" src="https://apps.larimer.org/_img/foster-parenting.jpg"> Foster Parenting </a></div>
+
+			<div class="col-sm-4">
+				<a href="#"><img alt="Kinship Program" src="https://apps.larimer.org/_img/kinship-program.jpg"> Kinship Program </a></div>
+		</div>
+
+		<p>
+			&nbsp;</p>
+
+		<p class="demo-label">
+			<span>4b</span> Image Nav with Description<a id="5" name="5"></a></p>
+
+		<div class="row nav-photo2">
+			<div class="col col-sm-4">
+				<div class="inner">
+					<a class="top-half" href="#"><img alt="Elections" src="https://apps.larimer.org/_img/clerk-elections.png" style="padding: 10px 0"></a>
+
+					<div>
+						<h3>
+							<a class="top-half" href="#" style="background: none !important">Elections</a></h3>
+						<a href="#">Register to vote</a> · <a href="#">Review and update your registration</a> · <a href="#">Track your mail ballot during an election</a> · <a href="#">Volunteer to serve as an Election Judge</a></div>
+				</div>
+			</div>
+
+			<div class="col col-sm-4">
+				<div class="inner">
+					<a class="top-half" href="#"><img alt="Recording &amp; Citizen Information Center" src="https://apps.larimer.org/_img/clerk-recording.png" style="padding: 10px 0"></a>
+
+					<div>
+						<h3>
+							<a class="top-half" href="#" style="background: none !important">Recording &amp; Citizen<br><span>Information Center</span></a></h3>
+						<a href="#">Marriage Licenses</a> · <a href="#">Passports</a> · <a href="#">Recording Documents</a> · <a href="#">Request copies</a> · <a href="#">Searching Documents</a> · <a href="#">Park Passes</a> · <a href="#">Pet Licenses</a><!-- &middot; <a href="#">Liquor Licenses</a>--></div>
+				</div>
+			</div>
+
+			<div class="col col-sm-4">
+				<div class="inner">
+					<a class="top-half" href="#"><img alt="Kinship Program" src="https://apps.larimer.org/_img/clerk-mv.png" style="padding: 10px 0"></a>
+
+					<div>
+						<h3>
+							<a class="top-half" href="#" style="background: none !important">Vehicle Licensing</a></h3>
+						<a href="#">Title and register your vehicle</a> · <a href="#">Renew your vehicle registration</a> · <a href="#">Find out about emissions testing</a> · <a href="#">Change your address for vehicle records</a></div>
+				</div>
+			</div>
+		</div>
+
+		<p>
+			&nbsp;</p>
+
+		<p class="demo-label">
+			<span>4c</span> Image Nav with Description - gray<a id="5b" name="5b"></a></p>
+
+		<div class="row nav-photo2 nav-photo-gray">
+			<div class="col-md-3 col-sm-6 ">
+				<div class="inner">
+					<a class="top-half" href="https://www.larimer.org/hr/benefits/aflac-supplemental-insurance"><img src="https://www.larimer.org/sites/default/files/aflac2.png"></a>
+
+					<h3 style="margin-top: 0px;">
+						<a class="top-half" href="https://www.larimer.org/hr/benefits/aflac-supplemental-insurance" style="background: none !important; padding-top: 15px;">Aflac</a></h3>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 ">
+				<div class="inner">
+					<a class="top-half" href="https://www.larimer.org/hr/benefits/dental-insurance"><img src="https://www.larimer.org/sites/default/files/deltadental2.png"></a>
+
+					<h3 style="margin-top: 0px;">
+						<a class="top-half" href="https://www.larimer.org/hr/benefits/dental-insurance" style="background: none !important; padding-top: 15px;">Dental Insurance</a></h3>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 ">
+				<div class="inner">
+					<a class="top-half" href="https://www.larimer.org/hr/benefits/disability-insurance"><img src="https://www.larimer.org/sites/default/files/voya2.png"></a>
+
+					<h3 style="margin-top: 0px;">
+						<a class="top-half" href="https://www.larimer.org/hr/benefits/disability-insurance" style="background: none !important; padding-top: 15px;">Disability Insurance</a></h3>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 ">
+				<div class="inner">
+					<a class="top-half" href="https://www.larimer.org/hr/benefits/employee-assistance-program"><img src="https://www.larimer.org/sites/default/files/compsych2.png"></a>
+
+					<h3 style="margin-top: 0px;">
+						<a class="top-half" href="https://www.larimer.org/hr/benefits/employee-assistance-program" style="background: none !important; padding-top: 15px;">Employee Assistance</a></h3>
+				</div>
+			</div>
+		</div>
+
+		<p>
+			&nbsp;</p>
+
+		<p class="demo-label">
+			<span>5</span> Accordion / Tabs<a id="6" name="6"></a></p>
+
+
+
+		<p class="demo-label">
+			<span>6</span> FAQs<a id="7" name="7"></a></p>
+
+		<h2>
+			FAQs</h2>
+
+		<ol class="faqs"><li>
+				<div class="fQ">
+					<p>
+						<a aria-controls="collapseExample" aria-expanded="false" data-toggle="collapse" href="#fA0">Frequently Asked Question #1?</a></p>
+				</div>
+
+				<div class="fa big-icon collapse" id="fA0" style="height: 0px;">
+					<p>
+						Frequently Asked Question Answer #1?</p>
+				</div>
+			</li>
+			<li>
+				<div class="fQ">
+					<p>
+						<a aria-controls="collapseExample" aria-expanded="false" data-toggle="collapse" href="#fA1">Frequently Asked Question #2?</a></p>
+				</div>
+
+				<div class="fa big-icon collapse" id="fA1" style="height: 0px;">
+					<p>
+						Frequently Asked Question Answer #2?</p>
+				</div>
+			</li>
+			<li>
+				<div class="fQ">
+					<p>
+						<a aria-controls="collapseExample" aria-expanded="false" data-toggle="collapse" href="#fA2">Frequently Asked Question #3?</a></p>
+				</div>
+
+				<div class="fa big-icon collapse" id="fA2" style="height: 0px;">
+					<p>
+						Frequently Asked Question Answer #3. Why is there a W in answer?</p>
+				</div>
+			</li>
+		</ol><p>
+			&nbsp;</p>
+
+		<p>
+			<strong>Users can create a Department Contact Block to apply on multiple pages, or add a Page Contact Block on a specific page.</strong></p>
+
+		<p class="demo-label">
+			<span>7</span> Contact Block: Horizontal (1/3 width of page)<a id="7" name="7"></a></p>
+
+		<div>
+			<div class="pullout-photo row">
+				<div class="col-sm-4 img">
+					<img alt="courthouse-offices" src="https://www.larimer.org/sites/default/files/courthouseoffices.jpg" title="Courthouse Offices Building" typeof="foaf:Image" width="1024" height="619"></div>
+
+				<div class="col-sm-8 txt">
+					<h3 class="underline">
+						Human Resources Department</h3>
+
+					<p>
+						<strong>ADDRESS:</strong> 200 West Oak, Suite 3200, Fort Collins, CO 80521<br><strong>HOURS:</strong> Monday - Friday, 8:00am-4:30pm<br><strong>PHONE:</strong><span> <span class="gc-cs-link" id="gc-number-0" title="Call with Google Voice">(970) 498-5970</span> |&nbsp;</span><strong>FAX:</strong><span> <span class="gc-cs-link" id="gc-number-1" title="Call with Google Voice">(970) 498-5980</span></span><br><strong>EMAIL:</strong> <span id="7fcabfe4911afec8b5b8fd80ef54fc7b1cfad1d3"><a href="mailto:humanresources@larimer.org" class="contact-modal2">humanresources@larimer.org</a></span></p>
+				</div>
+			</div>
+		</div>
+
+		<p>
+			&nbsp;</p>
+
+		<p class="demo-label">
+			<span>7</span> Contact Block: Square-ish (1/4 width of page)<a id="7" name="7"></a></p>
+
+		<div>
+			<div class="pullout-photo row">
+				<div class="col-sm-3 img">
+					<img alt="courthouse-offices" src="https://www.larimer.org/sites/default/files/steve-miller.jpg" title="Courthouse Offices Building" typeof="foaf:Image" width="1024" height="619"></div>
+
+				<div class="col-sm-9 txt">
+					<h3 class="underline">
+						Steve Miller, Larimer County Assessor</h3>
+
+					<p>
+						<strong>ADDRESS:</strong> 200 West Oak, Suite 3200, Fort Collins, CO 80521<br><strong>HOURS:</strong> Monday - Friday, 8:00am-4:30pm<br><strong>PHONE:</strong><span> <span class="gc-cs-link" id="gc-number-0" title="Call with Google Voice">(970) 498-5970</span> |&nbsp;</span><strong>FAX:</strong><span> <span class="gc-cs-link" id="gc-number-1" title="Call with Google Voice">(970) 498-5980</span></span><br><strong>EMAIL:</strong> <span id="7fcabfe4911afec8b5b8fd80ef54fc7b1cfad1d3"><a href="mailto:humanresources@larimer.org" class="contact-modal2">humanresources@larimer.org</a></span></p>
+				</div>
+			</div>
+		</div>
+
+		<p>
+			&nbsp;</p>
+
+		<p class="demo-label">
+			<span>7c</span> Contact Block: Vertical (1/6 width of page, - head shot)<a id="7b" name="7b"></a></p>
+
+		<div class="pullout-photo row div-green clearfix">
+			<div class="col-sm-2 col-xs-4 img">
+				<img alt="Angela Myers" src="https://apps.larimer.org/_img/myers.jpg"></div>
+
+			<div class="col-sm-10 col-xs-8 txt">
+				<h3 class="underline">
+					Angela Myers, County Clerk and Recorder</h3>
+
+				<p>
+					<strong>Address:</strong> 2601 Midpoint Drive, Suite 112, Fort Collins, CO 80526<br><strong>Hours:</strong> Monday-Friday 8 a.m. - 4:30 p.m.<br><strong>Phone:</strong> (970) 498-7750</p>
+			</div>
+		</div>
+
+		<p>
+		&nbsp;</p>		
+				
+				
+		
+		
+		
 	</div>
 	
 	<!-- START FOOTER -->
