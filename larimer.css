@@ -29,14 +29,13 @@ table td { cursor: text !important; }
 
 table td { cursor: text !important; }
 img { max-width: 100%; min-height: 1px; }
+
 @media only screen and (min-width: 768px) {
 	.main-content .row:not(.nav-quick):not(.assessor):not(.inner) {
 		display: flex;
 		flex-wrap: wrap;
 		display: -webkit-box;
 		display: -webkit-flex;
-		/* display: -ms-flexbox;
-		display: flex; */
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
@@ -44,8 +43,6 @@ img { max-width: 100%; min-height: 1px; }
 	.main-content .row:not(.nav-quick):not(.assessor):not(.inner) > [class^='col-'] {
 		display: -webkit-box;
 		display: -webkit-flex;
-		/* display: -ms-flexbox;
-		display: flex; */
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
 		-webkit-flex-direction: column;
@@ -56,6 +53,7 @@ img { max-width: 100%; min-height: 1px; }
 		display: initial !important;
 	}
 }
+
 .col-sm-6, .col-md-6, .col-xs-6, .col-sm-4, .col-md-4, .col-xs-4, .col-sm-3, .col-md-3, .col-xs-3 {
     margin-bottom: 10px;
 }
@@ -239,7 +237,7 @@ a {
 
 .nav-photo a, .nav-photo2 a, .nav-icon a, .nav-btn a, .nav-btn-desc a, .iwant a { text-decoration: none !important; }
 .main-content a:hover, .nav-photo a:hover, .nav-photo2 a:hover, .nav-icon a:hover, .nav-btn a:hover, .iwant a:hover { text-decoration: underline; }
-.nav-photo2 .inner, .nav-btn-desc a, .nav-photo2.nav-photo-gray div .inner, .nav-photo a { height: 100%; }
+.nav-photo2 .inner, .nav-btn-desc a, .nav-photo2.nav-photo-gray div .inner, .nav-photo a { min-height: 100%; }
 .nav-photo2 a:hover h3 { color: #fff; }
 .modal { z-index: 10051; }
 .modal-header { padding: 10px; color: #fff; background-color: #0B5E55; }
@@ -537,7 +535,7 @@ h1.gray:before, h2.gray:before, h3.gray:before { border-color: #585453; color: #
 /* NAVIGATION */
 .nav-photo a, .nav-photo2 a, .nav-icon a, .nav-btn a, .nav-btn-desc a, .iwant a { text-decoration: none !important; }
 .main-content a:hover, .nav-photo a:hover, .nav-photo2 a:hover, .nav-icon a:hover, .nav-btn a:hover, .iwant a:hover { text-decoration: underline; }
-.nav-photo2 .inner, .nav-btn-desc a, .nav-photo2.nav-photo-gray div .inner, .nav-photo a { height: 100%; }
+.nav-photo2 .inner, .nav-btn-desc a, .nav-photo2.nav-photo-gray div .inner, .nav-photo a { min-height: 100%; }
 .nav-photo2 a:hover h3 { color: #fff; }
 .st-nav { background-image: url(/sites/all/themes/larimer/assets/images/st-nav-bg.png);  background-position: center center; text-transform: uppercase; }
 nav { opacity: .93; }
@@ -646,7 +644,7 @@ a.st-logo { float: none; position: absolute; top: 0px;  }
 
 .nav-photo2 ul { margin: 0px 0 0 -40px; list-style: none; text-align: center; }
 .main-content .nav-photo2 ul li { line-height: 1.3em; }
-.nav-photo2 .inner { background: #7a673c; margin-bottom: 10px; height: 100%; } 
+.nav-photo2 .inner { background: #7a673c; margin-bottom: 10px; min-height: 100%; } 
 .nav-photo2 .inner div { padding: 0 20px 10px 20px; color: #fff; text-align: center; }
 .main-content .nav-photo2 .inner div p { padding: 0px; margin: 0px; }
 .nav-photo2 a { color: #fff; }
@@ -678,7 +676,7 @@ a.st-logo { float: none; position: absolute; top: 0px;  }
 .nav-photo2.nav-photo-gray a img {background: transparent; }
 /*.nav-photo2.nav-photo-gray a:hover img, */
 .nav-photo2.nav-photo-gray div a.top-half:hover {background: #f0e7d6; }
-.nav-photo2.nav-photo-gray div a.top-half h3, .nav-photo2.nav-photo-gray div .inner { background: #333 !important; font-size:1.1em; height: 100%; }
+.nav-photo2.nav-photo-gray div a.top-half h3, .nav-photo2.nav-photo-gray div .inner { background: #333 !important; font-size:1.1em; min-height: 100%; }
 .nav-photo2.nav-photo-gray div a.top-half h3 { margin-bottom: 0px; }
 .nav-photo2.nav-photo-gray div a.top-half { border-color: #ddd !important; background: #ddd;}
 .nav-photo2.nav-photo-gray div a.top-half:hover {border-color: #7a673c !important;}
@@ -686,7 +684,7 @@ a.st-logo { float: none; position: absolute; top: 0px;  }
 .nav-btn a, .nav-btn-desc a { display: block; padding: 10px;
 	background: #f4e9e3; color: #9f481b; border-top: 4px solid #9f481b;
 	text-transform: uppercase; font-size: 1.2em; font-weight: bold;
-	height: 100%;
+	min-height: 100%;
 }
 .nav-btn-desc a span { display: block; font-size: 15px; color: #231F20; font-weight: normal !important; text-transform: none; padding-top: 5px; }
 
