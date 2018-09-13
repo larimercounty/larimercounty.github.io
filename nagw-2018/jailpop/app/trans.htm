@@ -1,0 +1,79 @@
+<ul class="nav nav-pills">
+	<li role="presentation"><a href="" ui-sref="totals" class="nav-link"><i class="fa fa-users" aria-hidden="true"></i> Jail Population</a></li>
+	</div>	
+	<li role="presentation" class="active"><a href="" class="nav-link"><i class="fa fa-book" aria-hidden="true"></i> Transient/Homeless Bookings</a></li>
+	<li role="presentation"><a href="/sheriff/inmate-ng/" class="nav-link"><i class="fa fa-search" aria-hidden="true"></i> Search All Inmates</a></li>
+	<li role="presentation"><a href="/sheriff/booking-report/" class="nav-link"><i class="fa fa-calendar" aria-hidden="true"></i> View Booking Reports</a></li>
+</ul>	
+
+<h2>Transient/Homeless Inmate Report</h2>
+<div ng-show="!vm.dataDtl['cnt']" class="alert alert-danger">
+	{{ vm.settings.nodata }}
+</div>
+
+<div ng-show="vm.dataDtl['cnt'].length>0">
+	<div class="row">
+		<div class="col-sm-4 text-center">
+			<div class="pie"><canvas id="pie" class="chart chart-pie"
+			  chart-data="[vm.dataDtl['cnt'][1].CNT, vm.dataDtl['cnt'][2].CNT, vm.dataDtl['cnt'][0].CNT]" chart-labels="['Homeless','Transient','Shelter']" chart-colours="vm.settings.chartColors" width="120" height="120">
+			</canvas>
+			</div>
+			<h5 class="text-left"><span class="sq" ng-style="{'background-color': vm.settings.chartColors[0]}"></span><span class="number">{{ vm.dataDtl['cnt'][1].CNT }}</span>Homeless<br>
+				<span class="sq" ng-style="{'background-color': vm.settings.chartColors[1]}"></span><span class="number">{{ vm.dataDtl['cnt'][2].CNT }}</span>Transient<br>
+			<span class="sq" ng-style="{'background-color': vm.settings.chartColors[2]}"></span><span class="number">{{ vm.dataDtl['cnt'][0].CNT }}</span>Shelter</h5>
+			
+		</div>
+		<div class="col-sm-8">
+			<h3>{{ vm.settings.transHeader }}</h3>
+			<p><strong>{{ vm.settings.transBold }}</strong> 
+				<button class="visible-xs btn btn-xs btn-primary" data-toggle="collapse" data-target="#transText" ><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></button>
+			</p> 
+			<p class="hidden-xs" id="transText" ng-bind-html="vm.settings.transText"></p>
+		</div>	
+	</div>	
+			
+	<div class="maindiv" ng-show2="vm.book"><a id="book"></a>
+		<h2>Transient/Homeless Bookings</h2>
+		<p class="text-center hidden-print">Filter by Name: <input ng-model="vm.search" class="form-control name-filter" placeholder="Name"></p>
+		<div class="h">
+			<span class="i1 text-center">Bk ID</span>
+			<span class="i2">Jail #</span>
+			<span class="i3">Name</span>
+			<span class="i4">Address</span>
+			<span class="i5">Booking Date</span>
+			<span class="i6"></span>
+		</div>
+		
+		<div ng-repeat="i in vm.dataDtl['inmate'] | filter: {BOOKING_NAME:vm.search}" ng-init="bn=i.BOOKING_NO; in=$index">
+			<div class="p">
+			<span class="i1">{{ i.JAIL_ID }}</span>
+			<span class="i2">{{ i.BOOKING_NO }}</span>
+			<span class="i3">{{ i.BOOKING_NAME.replace(',',', ')}}</span>
+			<span class="i4"><span ng-if="i.ADDRESS.length>0">{{ i.ADDRESS }}</span><span ng-if="!i.ADDRESS">SHELTER</span></span>
+			<span class="i5">{{ i.BOOKING_DATE | limitTo: 10 }}</span>
+			<span class="i6">&nbsp; {{ vm.dataDtl['charge'][i.BOOKING_NO].AUTHORITY }}</span>
+			</div>
+			<div class="c" ng-repeat="c in vm.dataDtl['charge'][bn]">
+				<div class="ch" ng-if="in==0 && $index==0">
+				<span class="c0"></span>
+					<span class="c1">Auth.</span>
+					<span class="c2">Charge</span>
+					<span class="c3">Bond</span>
+					<span class="c4">Amt.</span>
+					<span class="c5"></span>
+					<span class="c6">Court Date</span>
+					</span>	
+				</div>
+				<span class="c0"></span>
+				<span class="c1">{{ c.data.AUTHORITY }}</span>
+				<span class="c2">{{ c.data.CHARGE_LITERAL }}</span>
+				<span class="c3">{{ c.data.BOND_TYPE  }}</span>
+				<span class="c4">{{ c.data.BOND_AMOUNT | currency: "$" : 0 }}</span>
+				<span class="c5"></span>
+				<span class="c6"><span ng-if="c.data.BOND_AMOUNT > 0">{{ vm.dataDtl['date'][bn][0].data.COURT_DATE }}  {{ vm.fixTime(vm.dataDtl['date'][bn][0].data.TIME) }}</span>
+				</span>	
+			</div>
+			<hr />
+		</div>
+	</div>
+</div>

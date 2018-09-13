@@ -1,0 +1,37 @@
+<?php
+
+function booking_block_info() {
+	$blocks = array();
+	$blocks['booking_block'] = array(
+	'info' => t('Booking Report Block'),
+	);  
+	return $blocks;
+}
+
+function booking_theme() {
+	return array(
+	'BOOKING_THEME' => array(
+		'template' => 'booking'
+		),
+	);
+}
+
+function booking_block_view($delta = '') {
+	$path="/sites/all/libraries/angular-utils/";
+	drupal_add_css(drupal_get_path('module', 'booking') . '/booking.css');
+	drupal_add_css($path . 'loading-bar.css');
+	drupal_add_js('//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js',  array('type' => 'external', 'scope' => 'header', 'weight' => 0));
+	drupal_add_js('//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.js',  array('type' => 'external', 'scope' => 'header', 'weight' => 0));
+	drupal_add_js($path . 'loading-bar.js',  array('weight' => 1));
+	drupal_add_js(drupal_get_path('module', 'booking') . '/app.js',  array('weight' => 1));
+	drupal_add_js($path . 'chart.js',  array('weight' => 1));
+	drupal_add_js($path . 'angular-chart-min.js',  array('weight' => 1));
+	if ( arg(0) == 'node' && is_numeric(arg(1)) ) {
+		drupal_add_js('(function () {
+		angular.module("app")
+		})();', array('type' => 'inline', 'weight' => 2));
+	}
+
+	$block['content'] = theme('BOOKING_THEME'); // , array('title' => '', 'path' => '' $title $path
+	return $block;
+}

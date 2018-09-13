@@ -1,0 +1,32 @@
+<?php
+
+function inmate_block_info() {
+	$blocks = array();
+	$blocks['inmate_block'] = array(
+	'info' => t('Inmate Search Block'),
+	);  
+	return $blocks;
+}
+
+function inmate_theme() {
+	return array(
+	'INMATE_THEME' => array(
+		'template' => 'inmate'
+		),
+	);
+}
+
+function inmate_block_view($delta = '') {
+	drupal_add_css(drupal_get_path('module', 'inmate') . '/inmate.css');
+	drupal_add_js('//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js',  array('type' => 'external', 'scope' => 'header', 'weight' => 0));
+	drupal_add_js('//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.js',  array('type' => 'external', 'scope' => 'header', 'weight' => 0));
+	drupal_add_js(drupal_get_path('module', 'inmate') . '/app.js',  array('weight' => 1));
+	if ( arg(0) == 'node' && is_numeric(arg(1)) ) {
+		drupal_add_js('(function () {
+		angular.module("app")
+		})();', array('type' => 'inline', 'weight' => 2));
+	}
+
+	$block['content'] = theme('INMATE_THEME'); // , array('title' => '', 'path' => '' $title $path
+	return $block;
+}

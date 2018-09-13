@@ -1,0 +1,53 @@
+<?php
+	
+function jailpop_block_info() {
+	$blocks = array();
+	$blocks['jailpop_block'] = array(
+		'info' => t('Jail Population Block')
+//		, 'cache' => DRUPAL_NO_CACHE
+	);  
+	return $blocks;
+}
+
+function jailpop_theme() {
+	return array(
+	'JAILPOP_THEME' => array(
+		'template' => 'jailpop'
+		),
+	);
+}	
+	
+function jailpop_block_view($delta = '') {
+	$path="/sites/all/libraries/angular-utils/";
+	$path2 = "/".drupal_get_path('module', 'jailpop');
+//	drupal_add_css($path . 'smart-table.css', array('type' => 'external', 'scope' => 'header', 'weight' => 1));
+	drupal_add_css($path . 'loading-bar.css', array('type' => 'external', 'scope' => 'header', 'weight' => 1));
+	drupal_add_css($path . 'angular-chart.min.css', array('type' => 'external', 'scope' => 'header', 'weight' => 1));
+	drupal_add_css($path . 'jail/style.css', array('type' => 'external', 'scope' => 'header', 'weight' => 1));
+	
+	drupal_add_js('//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js',  array('type' => 'external', 'scope' => 'header', 'weight' => 0));
+	drupal_add_js('//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js',  array('type' => 'external', 'scope' => 'header', 'weight' => 1));
+	drupal_add_js('//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-sanitize.js',  array('type' => 'external', 'scope' => 'header', 'weight' => 1));
+	drupal_add_js('//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.4.0/ui-bootstrap-tpls.js',  array('type' => 'external', 'scope' => 'header', 'weight' => 1));
+
+	drupal_add_js($path . 'loading-bar.js', array('type' => 'external', 'scope' => 'header', 'weight' => 2)); 
+	drupal_add_js($path2 . '/app/angular-gauge.js',  array('weight' => 2, 'preprocess' => FALSE));
+	drupal_add_js('//bernii.github.io/gauge.js/dist/gauge.min.js',  array('type' => 'external', 'scope' => 'header', 'weight' => 2));
+	drupal_add_js('//www.amcharts.com/lib/3/amcharts.js',  array('type' => 'external', 'scope' => 'header', 'weight' => 2));
+	drupal_add_js('//www.amcharts.com/lib/3/gauge.js',  array('type' => 'external', 'scope' => 'header', 'weight' => 2));
+	drupal_add_js('//www.amcharts.com/lib/3/themes/light.js',  array('type' => 'external', 'scope' => 'header', 'weight' => 2));
+
+	drupal_add_js($path2 . '/app/app.js',  array('weight' => 3, 'preprocess' => FALSE));
+	drupal_add_js($path2 . '/app/totalsCtrl.js',  array('weight' => 3, 'preprocess' => FALSE));
+	drupal_add_js($path2 . '/app/transCtrl.js',  array('weight' => 3, 'preprocess' => FALSE));
+
+	drupal_add_js($path2 . '/app/constants.js',  array('weight' => 3, 'preprocess' => FALSE));
+	drupal_add_js($path . 'chart.js', array('type' => 'external', 'scope' => 'header', 'weight' => 3));
+	drupal_add_js($path . 'angular-chart-min.js', array('type' => 'external', 'scope' => 'header', 'weight' => 3));
+	drupal_add_js('(function () {
+		angular.module("app")
+		})();',  array('type' => 'inline', 'weight' => 4));
+		
+	$block['content'] = theme('JAILPOP_THEME'); // , array('title' => '', 'path' => '' $title $path
+	return $block;
+}

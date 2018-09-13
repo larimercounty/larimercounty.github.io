@@ -1,0 +1,4 @@
+name = "Jail Population"
+description = "This module displays the Jail Population data for the Sheriff's Department using Angular.js."
+core = 7.x
+package = Angular

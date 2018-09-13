@@ -1,0 +1,4 @@
+name = "Booking Report Block"
+description = "This module displays the Booking Report for the Sheriff's Department using Angular.js."
+core = 7.x
+package = Angular

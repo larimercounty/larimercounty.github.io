@@ -1,0 +1,128 @@
+<ul class="nav nav-pills">
+	<li role="presentation" class="active"><a href="" class="nav-link"><i class="fa fa-users" aria-hidden="true"></i> Jail Population</a></li>
+</div>	
+<li role="presentation"><a href="" ui-sref="trans" class="nav-link"><i class="fa fa-book" aria-hidden="true"></i> Transient/Homeless Bookings</a></li>
+<li role="presentation"><a href="/sheriff/jail/inmate-search" class="nav-link"><i class="fa fa-search" aria-hidden="true"></i> Search All Inmates</a></li>
+<li role="presentation"><a href="/sheriff/booking-report/" class="nav-link"><i class="fa fa-calendar" aria-hidden="true"></i> View Booking Reports</a></li>
+</ul>	
+
+<h2>Current Jail Population</h2>
+<div ng-show="!vm.totalPct" class="alert alert-danger">
+	{{ vm.settings.nodata }}
+</div>
+
+<div ng-show="vm.totalPct.length>0">
+	<div class="row">
+		<div class="col-sm-4 text-center">
+			<div class="pop-div">
+				<h5 class="text-center"></h5>
+				<div><span class="current-label">Current</span><span class="badge no total-label">{{ vm.total }}</span></div>
+				<canvas height="120" width="200" gaugejs options="gaugeOptions" value="vm.total" max-value="vm.settings.capacity" animation-time="animationTime"></canvas>
+				<div class="capacity">Capacity<br><strong class="no">{{ vm.settings.capacity }}</strong></div>
+				<div class="target" title="No more than">Target (<) <br><strong  class="no">{{ vm.settings.target }}</strong></div>
+				
+				
+			</div>
+		</div>	
+		<div class="col-sm-8">
+			<h3>{{ vm.settings.popHeader }}</h3>
+			<p><strong>{{ vm.settings.popBold }}</strong>
+			<button class="visible-xs btn btn-xs btn-primary" data-toggle="collapse" data-target="#popText"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></button>
+			</p> 
+			<p class="hidden-xs" id="popText" ng-bind-html="vm.settings.popText"></p>
+		</div>	
+	</div>	
+
+
+	<hr>
+	<div class="container">
+		<div class="row">
+			<div class="bed-caption">= 50 beds</div>
+			<div class="beds">
+				<div class="beds-empty">
+					<div class="beds-red" ng-style="{width: vm.totalPct}"><span>Current: <strong class="num">{{ vm.total }}</strong></span></div>
+					<div class="beds-full" ng-style="{width: vm.targetPct}"><span title="No more than">Target: <strong class="num">< {{ vm.settings.target }}</strong></span></div>
+					<span class="emp">Empty: <strong class="num">{{ vm.empty }}</strong></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<h3>Monthly Jail Population</h3>
+	<canvas id="line" class="chart chart-line" chart-data="[vm.monthly['t']]" chart-labels="vm.monthly['d']" chart-legend="false"  chart-options="{pointHitDetectionRadius: 1}" chart-series="['Total']"  chart-colours="[vm.settings.teal]"
+	chart-click="onClick"></canvas> 
+	<hr>
+
+	<div class="row">
+		<div class="col-sm-4">		
+			<div class="pie text-center"><canvas id="pie" class="chart chart-pie"
+				chart-data="[vm.totalths, vm.other]" chart-labels="['Transient/Homeless','Other']" chart-colours="vm.settings.chartColors" chart-options="{tooltipFontSize: 11}" width="120" height="120">
+				</canvas>
+			</div>
+			<h5><span class="sq" ng-style="{'background-color': vm.settings.chartColors[0]}"></span><span class="number">{{ vm.totalths }}</span>Transient/Homeless<br><span class="sq" ng-style="{'background-color': vm.settings.chartColors[1]}"></span><span class="number">{{ vm.other }}</span>Other Inmates</h5>
+		</div>
+		<div class="col-sm-8">
+			<h3>{{ vm.settings.transHeader }}</h3>
+			<p><strong>{{ vm.settings.transBold }}</strong>
+			<button class="visible-xs btn btn-xs btn-primary" data-toggle="collapse" data-target="#transText"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></button>
+			</p> 
+			<p class="hidden-xs" id="transText" ng-bind-html="vm.settings.transText"></p>
+			<p><button class="btn btn-primary" ui-sref="trans"><i class="fa fa-list" aria-hidden="true"></i> Transient/Homeless Bookings</button></p>
+		</div>	
+	</div>		
+	<hr>
+
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="pie text-center">
+				<canvas id="pie" class="chart chart-pie"
+				chart-data="[vm.male, vm.female]" chart-labels="['Male','Female']" chart-colours="[vm.settings.blue,vm.settings.red]" width="120" height="120">
+				</canvas>
+			</div>
+			<h5><span class="sq" ng-style="{'background-color': vm.settings.blue}"></span><span class="number">{{ vm.male }}</span>Male<br><span class="sq" ng-style="{'background-color': vm.settings.red}"></span><span class="number">{{ vm.female }}</span>Female</h5>
+		</div>
+		<div class="col-sm-8">
+			<h3>{{ vm.settings.mfHeader }}</h3>
+			<p><strong>{{ vm.settings.mfBold }}</strong> 
+				<button class="visible-xs btn btn-xs btn-primary" data-toggle="collapse" data-target="#mfText" ><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></button>
+			</p> 
+			<p class="hidden-xs" id="mfText" ng-bind-html="vm.settings.mfText"></p>
+			<!--<p ng-show="vm.isOpenMf">{{ vm.settings.mfText }}</p>-->
+		</div>	
+	</div>	
+	<hr>
+
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="pie text-center"><canvas id="pie" class="chart chart-pie"
+				chart-data="[vm.pretrial, vm.sentenced, vm.hold]" chart-labels="['Pre-Trial','Sentenced','Hold']" chart-colours="vm.settings.chartColors" width="120" height="120">
+				</canvas>
+			</div>
+			<h5><span class="sq" ng-style="{'background-color': vm.settings.chartColors[0]}"></span><span class="number">{{ vm.pretrial }}</span>Pre-Trial<br>
+				<span class="sq" ng-style="{'background-color': vm.settings.chartColors[1]}"></span><span class="number">{{ vm.sentenced }}</span>Sentenced<br>
+			<span class="sq" ng-style="{'background-color': vm.settings.chartColors[2]}"></span><span class="number">{{ vm.hold }}</span>Hold</h5>
+		</div>
+		<div class="col-sm-8">
+			<h3>{{ vm.settings.typesHeader }}</h3>
+			<p><strong>{{ vm.settings.typesBold }}</strong> 
+				<button class="visible-xs btn btn-xs btn-primary" data-toggle="collapse" data-target="#typesText" ><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></button>
+			</p> 
+			<div class="hidden-xs" id="typesText" ng-bind-html="vm.settings.typesText"></div>
+		</div>	
+	</div><hr>
+
+	<div class="row">
+		<div class="col-sm-4">
+			<div style="height: 80px;">
+				<div style="height: 80px; float: left; display: inline-block; border-right: 2px solid #fff;" ng-style="{'background-color': vm.settings.red, 'width': vm.felonyPct }" uib-tooltip="Felony: {{ vm.felonyPct }}"></div>
+				<div style="height: 80px; display: inline-block; background: {{ vm.settings.blue }}" ng-style="{'width': vm.misdemeanorPct }" uib-tooltip="Misdemeanor: {{ vm.misdemeanorPct }}"></div>			
+			</div>
+			<h5><span class="sq" ng-style="{'background-color': vm.settings.red }"></span><span class="number">{{ vm.felonyPct }}</span> Felony<br>
+				<span class="sq" ng-style="{'background-color': vm.settings.blue }"></span><span class="number">{{ vm.misdemeanorPct }}</span> Misdemeanor</h5>
+		</div>
+		<div class="col-sm-8">
+			<h3>Pre-Trial Felony vs. Misdemeanor</h3>
+			<p><strong>Some inmates are being held on one charge and some have multiple charges.  Pre-trial inmates with at least one felony charge will be reflected in the felony percentage.</strong></p>
+		</div>	
+	</div>
+</div>
