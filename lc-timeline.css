@@ -1748,6 +1748,10 @@
 .tl-timegroup.tl-timegroup-hidden {
   display: none;
 }
+
+.tl-timegroup:nth-of-type(1) {
+  background:#fff !important;
+  }
 /* Skinny
 ================================================== */
 /* Mobile, iPhone
